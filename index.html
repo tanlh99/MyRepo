@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale = 1">
+
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+</head>
+
+<body>
+    <p>My List</p>
+    <ul id="mypetlist" data-role="listview">
+        <li><a href="#"> List item 1</a></li>
+    </ul>
+
+    <a id="btnaddParrot" class="ui-btn ui-btn-b ui-corner-all ui-btn-icon-left ui-icon-plus" href=""> Add a Parrot </a>
+    <button id="btnaddDog"> Add a dog </button>
+    <script>
+        $(document).ready(function () {
+            //alert("Document ready");
+            $("#btnaddParrot").click(function () {
+                //alert("Add Parrot in list");
+                $("#mypetlist").append('<li><a href="#"> a Parrot <button class=" View ui-btn-b ui-btn ui-btn-inline">view Detail</button> </a></li>');
+                $("#mypetlist").listview("refresh");
+                
+                $(".View").click(function () {
+                    alert("View Detail is click");
+                });
+                
+            });
+
+            $("#btnaddDog").click(function () {
+                //alert("Add Parrot in list");
+                $("#mypetlist").append('<li><a href="#"> a Dog </a> <button> view Detail </button> </li>');
+                $("#mypetlist").listview("refresh");
+            });
+           
+        });
+
+    </script>
+</body>
+
+</html>
